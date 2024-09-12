@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         body {
             margin: 0;
@@ -15,80 +14,98 @@
         }
         .container {
             position: relative;
-            width: 1280px;
-            height: 832px;
+            width: 100%;
+            max-width: 1280px;
             margin: auto;
+            padding: 20px;
         }
         .name, .about-me, .portfolio {
-            position: absolute;
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 400;
+            position: relative;
+            display: inline-block;
+            margin: 10px;
         }
         .name a, .about-me a, .portfolio a {
             text-decoration: none;
             color: black;
         }
-        .name {
-            left: 90px;
-            top: 57px;
-        }
-        .about-me {
-            left: 806px;
-            top: 57px;
-        }
-        .portfolio {
-            left: 1031px;
-            top: 57px;
-        }
         .content {
-            position: absolute;
-            left: 625px;
-            top: 200px;
-            width: 483px;
-            height: 382px;
+            margin-top: 20px;
+            text-align: center;
         }
         .title {
-            font-size: 60px;
+            font-size: 40px;
             font-weight: 600;
             color: black;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         .description {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 400;
             color: black;
-            position: absolute;
-            top: 113px;
-            left: 3px;
+            margin-top: 10px;
         }
         .icons {
-            position: absolute;
-            top: 229px;
-            left: 0;
+            margin-top: 20px;
             display: flex;
-            gap: 30px; /* Menambahkan jarak antar ikon */
+            justify-content: center;
+            gap: 20px;
         }
         .icons a {
-            font-size: 50px; /* Mengubah ukuran ikon */
+            font-size: 30px;
             color: black;
             text-decoration: none;
         }
         .email-text {
-            position: absolute;
-            top: 320px; /* Menyesuaikan posisi vertikal agar berada di bawah ikon media sosial */
-            left: 0;
-            font-size: 20px;
+            margin-top: 20px;
+            font-size: 16px;
             color: black;
         }
         .profile-picture {
-            position: absolute;
-            width: 375px;
-            height: 374px;
+            width: 100%;
+            max-width: 375px;
+            height: auto;
             border-radius: 50%;
-            left: 78px;
-            top: 169px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        @media (max-width: 768px) {
+            .name, .about-me, .portfolio {
+                font-size: 16px;
+            }
+            .title {
+                font-size: 32px;
+            }
+            .description {
+                font-size: 14px;
+            }
+            .icons a {
+                font-size: 24px;
+            }
+            .email-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name, .about-me, .portfolio {
+                display: block;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+            .title {
+                font-size: 28px;
+            }
+            .description {
+                font-size: 12px;
+            }
+            .icons a {
+                font-size: 20px;
+            }
+            .email-text {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
