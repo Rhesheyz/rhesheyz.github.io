@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sang Tirta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: #042331;
+            transition: all .5s ease;
+        }
+
+        .sidebar header {
+            font-size: 22px;
+            color: white;
+            line-height: 70px;
+            text-align: center;
+            background: #063146;
+            user-select: none;
+        }
+
+        .sidebar ul a {
+            display: block;
+            width: 100%;
+            line-height: 65px;
+            font-size: 20px;
+            color: white;
+            padding-left: 40px;
+            border-bottom: 1px solid black;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            transition: .4s;
+        }
+
+        ul li:hover a {
+            padding-left: 50px;
+        }
+
+        .sidebar ul a i {
+            margin-right: 16px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        section {
+            background: url(bg.jpeg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            transition: all .5s;
+            margin-left: 250px;
+        }
+
+        .logout-form {
+            display: block;
+            width: 100%;
+        }
+
+        .logout-button {
+            background: none;
+            border: none;
+            color: white;
+            width: 100%;
+            font-size: 20px;
+            text-align: left;
+            padding-left: 40px;
+            line-height: 65px;
+            transition: padding-left 0.4s;
+        }
+
+        .logout-button:hover {
+            padding-left: 50px;
+            cursor: pointer;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+            font-weight: 400;
+        }
+
+        .content {
+            margin-top: 150px;
+        }
+
+        /* Card layout adjustments */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Layout for 2 cards per row */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(1, 1fr); /* Default to 1 column */
+        }
+
+        @media (min-width: 640px) { /* For small screens and up */
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for sm and up */
+            }
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .card-description {
+            font-size: 0.875rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        /* Under Construction Styling */
+        .construction-container {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .construction-container h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .construction-container p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .construction-container i {
+            font-size: 4rem;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <header>Mohamad Fahrizal Aldi</header>
+        <ul class="navbar-nav">
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="far fa-question-circle"></i>About Me</a></li>
+            <li><a href="portofolio.html"><i class="fas fa-qrcode"></i>Portfolio</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="construction-container">
+            <i class="fas fa-tools"></i>
+            <h1>Halaman Sedang Dibuat</h1>
+            <p>Mohon maaf, halaman ini sedang dalam proses pembuatan. Silakan kembali lagi nanti!</p>
+        </div>
+    </div>
+</body>
+</html>
+
