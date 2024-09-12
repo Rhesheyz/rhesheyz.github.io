@@ -74,60 +74,48 @@
             margin-right: 16px;
         }
 
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
 
-        section {
+        /* section {
             background: url(bg.jpeg) no-repeat;
             background-position: center;
             background-size: cover;
             height: 100vh;
             transition: all .5s;
             margin-left: 250px;
-        }
+        } */
 
-        .logout-form {
-            display: block;
-            width: 100%;
-        }
-
-        .logout-button {
-            background: none;
-            border: none;
-            color: white;
-            width: 100%;
-            font-size: 20px;
-            text-align: left;
-            padding-left: 40px;
-            line-height: 65px;
-            transition: padding-left 0.4s;
-        }
-
-        .logout-button:hover {
-            padding-left: 50px;
-            cursor: pointer;
-        }
+        
 
         /* Navbar styling */
         .navbar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 90px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: transparent;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8); /* Transparent background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+            max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
         }
-
+        .navbar .left {
+            flex: 1;
+        }
+        .navbar .right {
+            display: flex;
+            gap: 20px; /* Increased gap to avoid overflow */
+        }
         .navbar a {
             text-decoration: none;
-            font-size: 24px;
             color: black;
-            font-weight: 400;
+            font-size: 22px; /* Increased font size */
+        }
+        .navbar a:hover {
+            text-decoration: underline;
         }
 
         .content {
@@ -214,17 +202,18 @@
 </head>
 <body>
     <!-- Sidebar -->
-    <div class="sidebar">
-        <header>Mohamad Fahrizal Aldi</header>
-        <ul class="navbar-nav">
-            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="about.html"><i class="far fa-question-circle"></i>About Me</a></li>
-            <li><a href="portofolio.html"><i class="fas fa-qrcode   "></i>Portfolio</a></li>
-        </ul>
+    <div class="navbar">
+        <div class="left">
+            <a href="index.html">Mohamad Fahrizal Aldi</a>
+        </div>
+        <div class="right">
+            <a href="about.html">About Me</a>
+            <a href="portofolio.html">Portfolio</a>
+        </div>
     </div>
     
     <!-- Main Content -->
-    <div class="main-content">
+    <div>
         <!-- Grid Container with 2 cards per row -->
         <h1 class="judul">Portofolio</h1>
         <div class="container mt-8 p-4 grid">

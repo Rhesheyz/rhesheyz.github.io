@@ -22,186 +22,51 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f7fafc;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background: #042331;
-            transition: all .5s ease;
-        }
-
-        .sidebar header {
-            font-size: 22px;
-            color: white;
-            line-height: 70px;
-            text-align: center;
-            background: #063146;
-            user-select: none;
-        }
-
-        .sidebar ul a {
-            display: block;
-            width: 100%;
-            line-height: 65px;
-            font-size: 20px;
-            color: white;
-            padding-left: 40px;
-            border-bottom: 1px solid black;
-            border-top: 1px solid rgba(255, 255, 255, .1);
-            transition: .4s;
-        }
-
-        ul li:hover a {
-            padding-left: 50px;
-        }
-
-        .sidebar ul a i {
-            margin-right: 16px;
-        }
-
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
-
-        section {
-            background: url(bg.jpeg) no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 100vh;
-            transition: all .5s;
-            margin-left: 250px;
-        }
-
-        .logout-form {
-            display: block;
-            width: 100%;
-        }
-
-        .logout-button {
-            background: none;
-            border: none;
-            color: white;
-            width: 100%;
-            font-size: 20px;
-            text-align: left;
-            padding-left: 40px;
-            line-height: 65px;
-            transition: padding-left 0.4s;
-        }
-
-        .logout-button:hover {
-            padding-left: 50px;
-            cursor: pointer;
         }
 
         /* Navbar styling */
         .navbar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 90px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: transparent;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8); /* Transparent background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            box-sizing: border-box;
+            max-width: 100%;
         }
-
+        .navbar .left {
+            flex: 1;
+        }
+        .navbar .right {
+            display: flex;
+            gap: 20px;
+        }
         .navbar a {
             text-decoration: none;
-            font-size: 24px;
             color: black;
-            font-weight: 400;
+            font-size: 22px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
         }
 
-        .content {
-            margin-top: 150px;
-        }
-
-        /* Card layout adjustments */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7fafc;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Layout for 2 cards per row */
-        .grid {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(1, 1fr); /* Default to 1 column */
-        }
-
-        @media (min-width: 640px) { /* For small screens and up */
-            .grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns for sm and up */
-            }
-        }
-
-        .card {
-            background-color: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
+        /* Flexbox centering for the main content */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
             width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .card img:hover {
-            transform: scale(1.1);
-        }
-
-        .card-content {
-            padding: 1rem;
-        }
-
-        .card-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-
-        .card-description {
-            font-size: 0.875rem;
-            color: #4a5568;
-            margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .card-footer {
-            font-size: 0.875rem;
-            color: #718096;
         }
 
         /* Under Construction Styling */
@@ -236,13 +101,14 @@
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-        <header>Mohamad Fahrizal Aldi</header>
-        <ul class="navbar-nav">
-            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="about.html"><i class="far fa-question-circle"></i>About Me</a></li>
-            <li><a href="portofolio.html"><i class="fas fa-qrcode"></i>Portfolio</a></li>
-        </ul>
+    <div class="navbar">
+        <div class="left">
+            <a href="index.html">Mohamad Fahrizal Aldi</a>
+        </div>
+        <div class="right">
+            <a href="about.html">About Me</a>
+            <a href="portofolio.html">Portfolio</a>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -253,6 +119,6 @@
             <p>Mohon maaf, halaman ini sedang dalam proses pembuatan. Silakan kembali lagi nanti!</p>
         </div>
     </div>
+
 </body>
 </html>
-
